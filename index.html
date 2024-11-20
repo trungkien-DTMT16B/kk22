@@ -85,7 +85,7 @@
     <figure class="highcharts-figure">
         <div id="container"></div>
         <p class="highcharts-description">
-            Chart showing heartbeats data updating every second.
+            Biểu đồ thể hiện giá trị nhiệt độ không khí cập nhật 1 giây 1 lần..
         </p>
         <button id="exportButton">Export to Excel</button>
     </figure>
@@ -157,7 +157,7 @@
             },
 
             title: {
-                text: 'Live Heartbeat Data'
+                text: 'Biểu Đồ Giá Trị Nhiệt Độ'
             },
 
             accessibility: {
@@ -181,10 +181,10 @@
 
             yAxis: {
                 title: {
-                    text: 'Heartbeat'
+                    text: 'Giá trị nhiệt độ'
                 },
                 min: 0, // Giá trị tối thiểu của trục Y
-                max: 130, // Giá trị tối đa của trục Y
+                max: 60, // Giá trị tối đa của trục Y
                 tickInterval: 10, // Khoảng cách giữa các dấu vạch trên trục Y
                 plotLines: [
                     {
@@ -197,7 +197,7 @@
 
             tooltip: {
                 headerFormat: '<b>{series.name}</b><br/>',
-                pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}'
+                pointFormat: '{point.x:%d-%m-%Y / %H:%M:%S}<br/>{point.y:.2f}'
             },
 
             legend: {
@@ -210,7 +210,7 @@
 
             series: [
                 {
-                    name: 'Heartbeats',
+                    name: 'Nhiệt độ',
                     lineWidth: 2,
                     color: Highcharts.getOptions().colors[6],
                     data,
