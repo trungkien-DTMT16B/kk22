@@ -112,7 +112,7 @@
         // Era Widget initialization
         const eraWidget = new EraWidget();
         let config = null;
-        let heartbeatValue = 0; // Khởi tạo giá trị nhịp tim mặc định
+        let nhietdoValue = 0; // Khởi tạo giá trị nhịp tim mặc định
         const dataBuffer = [];
 
         eraWidget.onConfiguration((configuration) => {
@@ -121,7 +121,7 @@
 
         eraWidget.onValues((values) => {
             const input = document.getElementById('nhietDo');
-            heartbeatValue = values[config.id].value; // Giả sử values[config.id].value là nhịp tim thực tế
+            nhietdoValue = values[config.id].value; // Giả sử values[config.id].value là nhịp tim thực tế
             input.checked = values[config.id].value > 0; // Đặt trạng thái của checkbox dựa trên nhịp tim
         });
 
@@ -134,7 +134,7 @@
 
             setInterval(function () {
                 const x = (new Date()).getTime(), // thời gian hiện tại
-                    y = heartbeatValue; // Giá trị nhịp tim thực tế
+                    y = nhietdoValue; // Giá trị nhịp tim thực tế
 
                 series.addPoint([x, y], true, true);
                 dataBuffer.push([x, y]);
